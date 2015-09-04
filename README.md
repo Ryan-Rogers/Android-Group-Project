@@ -6,5 +6,5 @@ Android Group Project
 <br>
 <br>Himadri Acharya
 <br>Mason Moreland
-<br>Purvi Patki
+<br>Purvi Patki #Junior
 <br>Ryan Rogers
