@@ -2,9 +2,9 @@ body {
     margin: 0px;
     width: 100%;
     background: rgba(150, 150, 150, 0.2);
-    background-image: url(sell_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(home_bg.jpg);
+    background-repeat: repeat-y;
+    background-size: 100%;
     color: white;
     font-family: Sans-serif, Arial, "Sans-serif";
     text-align: center;
@@ -12,12 +12,20 @@ body {
     
     #navigation {
         background: rgba(150, 150, 150, 0.4);
+        width: 100%;
     }
         
         button {
             border: 0px;
+            margin-left: 3%;
+            margin-right: 3%;
             padding: 0px;
             background: none;
+            max-width: 10%;
+        }
+        
+        #navigation img {
+            max-width: 100%;
         }
     
     #content {
