@@ -5,11 +5,17 @@ body {
 }
     
     #navigation {
-        background: green;
+        background: black;
     }
+        
+        button {
+            border: 0px;
+            padding: 0px;
+            background: none;
+        }
     
     #content {
-        background: red;
+        background: white;
     }
     
         table {
@@ -19,9 +25,8 @@ body {
             tr {
                 width: 100%;
                 visibility: collapse;
-                background: blue;
+                background: white;
                 display: none;
-                color: #FFF;
             }
             
                 td {
