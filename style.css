@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     width: 100%;
-    background: black;
+    background: rgba(150, 150, 150, 0.2);
     background-image: url(sell_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +11,7 @@ body {
 }
     
     #navigation {
-        background: rgba(100, 100, 100, 0.6);
+        background: rgba(150, 150, 150, 0.4);
     }
         
         button {
@@ -21,16 +21,18 @@ body {
         }
     
     #content {
-        height: 1000px;
-        background: rgba(100, 100, 100, 0.4);
+        
     }
     
         .title {
             text-align: left;
+            margin: 0px;
         }
         
         table {
-            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
         }
     
             tr {
@@ -46,18 +48,30 @@ body {
         
         .item {
             color: black;
-            background: rgba(225, 225, 106, 0.6);
+            background: rgba(225, 225, 106, 0.7);
             margin: 1%;
             padding: 1%;
         }
     
     input {
-        background: rgba(0, 0, 0, 0.4);
-        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        width: 85%;
         padding-top: 2%;
         padding-bottom: 2%;
         border: 0px;
         color: white;
         text-align: center;
     }
+    
+    #submitDiv {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
+        .submit {
+            padding: 0px;
+            width: 100%;
+            color: rgba(0, 0, 0, 0.8);
+        }
     

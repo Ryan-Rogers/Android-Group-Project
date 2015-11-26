@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
     	<meta charset="utf-8">
+    	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <link href="style.css" rel="stylesheet">
     </head>
     
@@ -19,39 +20,34 @@
             <table>
         		<tr class="page" id="home">
         			<td>
-        			    <h1>1 Home</h1>
-        			    <br><h2>2 Home</h2>
-        			    <br><h3>3 Home</h3>
-        			    <br><h4>4 Home</h4>
-        			    <br><h5>5 Home</h5>
-        			    <br><h6>6 Home</h6>
+        			    <h1 class="title">Home</h1>
         			</td>
         		</tr>
         		
         		<tr class="page" id="history">
         			<td>
-        			    History
+        			    <h1 class="title">History</h1>
         			</td>
         		</tr>
         		
         		<tr class="page" id="options">
         			<td>
-        			    Options
+        			    <h1 class="title">Options</h1>
         			</td>
         		</tr>
         		
         		<tr class="page" id="communication">
         			<td>
-        			    Communication
+        			    <h1 class="title">Communication</h1>
         			</td>
         		</tr>
         		
         		<tr class="page" id="sell">
         			<td>
-        			    <h2 class="title" style="color: #e1e16a">Sell</h2>
+        			    <h1 class="title">Sell</h1>
         			    
         			    <div class="item">
-            			    Name
+            			    <br>Name
             			    <br><input type="text" id="newListingName">
             			    
             			    <br><br>Cost
@@ -68,11 +64,12 @@
                 			
             			    <br><br>Available Venues
                 			<br><input type="text" id="newListingVenues">
+                			<br><br>
         			    </div>
         			    
         			    
-        			    <br><div class="item">
-        			        <button>Create Listing</button>
+        			    <br><div class="item" id="submitDiv">
+        			        <button class="submit"><h3>Create Listing</h3></button>
         			    </div>
         			</td>
         		</tr>
