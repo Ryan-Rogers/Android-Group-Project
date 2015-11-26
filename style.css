@@ -1,11 +1,17 @@
 body {
     margin: 0px;
     width: 100%;
-    background: white;
+    background: black;
+    background-image: url(sell_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: Sans-serif, Arial, "Sans-serif";
+    text-align: center;
 }
     
     #navigation {
-        background: black;
+        background: rgba(100, 100, 100, 0.6);
     }
         
         button {
@@ -15,9 +21,14 @@ body {
         }
     
     #content {
-        background: white;
+        height: 1000px;
+        background: rgba(100, 100, 100, 0.4);
     }
     
+        .title {
+            text-align: left;
+        }
+        
         table {
             width: 100%;
         }
@@ -25,7 +36,6 @@ body {
             tr {
                 width: 100%;
                 visibility: collapse;
-                background: white;
                 display: none;
             }
             
@@ -33,3 +43,21 @@ body {
                     width: 100%;
                     padding: 0px;
                 }
+        
+        .item {
+            color: black;
+            background: rgba(225, 225, 106, 0.6);
+            margin: 1%;
+            padding: 1%;
+        }
+    
+    input {
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        border: 0px;
+        color: white;
+        text-align: center;
+    }
+    
