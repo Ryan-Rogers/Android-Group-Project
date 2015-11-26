@@ -1,0 +1,30 @@
+body {
+    margin: 0px;
+    width: 100%;
+    background: black;
+}
+    
+    #navigation {
+        background: green;
+    }
+    
+    #content {
+        background: red;
+    }
+    
+        table {
+            width: 100%;
+        }
+    
+            tr {
+                width: 100%;
+                visibility: collapse;
+                background: blue;
+                display: none;
+                color: #FFF;
+            }
+            
+                td {
+                    width: 100%;
+                    padding: 0px;
+                }
