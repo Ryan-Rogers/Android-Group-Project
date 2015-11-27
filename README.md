@@ -5,6 +5,5 @@ Android Group Project
 <br>CSE 3310-001 Fundamentals of Software Engineering
 <br>
 <br>Himadri Acharya
-<br>Mason Moreland
 <br>Purvi Patki #Junior
 <br>Ryan Rogers
