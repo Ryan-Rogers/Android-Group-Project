@@ -15,7 +15,7 @@ body {
         width: 100%;
     }
         
-        button {
+        #navigation button {
             border: 0px;
             margin-left: 3%;
             margin-right: 3%;
@@ -26,6 +26,7 @@ body {
         
         #navigation img {
             max-width: 100%;
+            max-height: 50px;
         }
     
     #content {
@@ -56,7 +57,6 @@ body {
         
         .item {
             color: black;
-            background: rgba(225, 225, 106, 0.7);
             margin: 1%;
             padding: 1%;
         }
@@ -75,11 +75,21 @@ body {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+        padding: 0px;
     }
     
         .submit {
             padding: 0px;
             width: 100%;
+            background: none;
+            border: 0px;
             color: rgba(0, 0, 0, 0.8);
         }
-    
+
+.alignLeft {
+    text-align: left;
+}
+
+.alignRight {
+    text-align: right;
+}

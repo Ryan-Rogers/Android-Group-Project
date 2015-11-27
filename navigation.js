@@ -4,9 +4,6 @@ var currentContent;
 // Hides the inputed content
 var hide = function(contentId) {
     
-    // Debug
-    console.log(contentId + " hidden");
-    
     // Hiding input content
     document.getElementById(contentId).style.visibility = "collapse";
     document.getElementById(contentId).style.display = "none";
@@ -17,9 +14,6 @@ var display = function(contentId) {
     
     // Hiding currently shown content & updating, if necessary
     if(contentId !== currentContent) {
-        
-        // Debug
-        console.log(contentId + " shown");
         
         // Updating currently shown content
         hide(currentContent);
@@ -42,9 +36,6 @@ var changeBackground = function(contentId) {
 
 // At load time
 var landingPage = function() {
-    
-    // Debug
-    console.log("JavaScript loaded");
     
     // Updating and showing home page
     document.getElementById("home").style.visibility = "visible";
