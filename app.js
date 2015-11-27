@@ -21,12 +21,22 @@ createListing = function() {
 };
 
 updateHome = function() {
+    
+    // Filtering with Search field
+    var search = document.getElementById("search").value;
+    var filteredListings = [];
+    listings.forEach(function(item) {
+        if(item.name.indexOf(search) !== -1) filteredListings.push(item);
+    })
+    
     var listing;
-    for(listing = 0; listing < 5 && listing < listings.length; listing++) {
-        document.getElementById("item" + listing).style.background = "rgba(63, 186, 255, 0.7)";
-        document.getElementById("item" + listing + "_name").innerHTML = listings[listing].name;
-        document.getElementById("item" + listing + "_price").innerHTML = listings[listing].cost;
+    // Populating Home
+    for(listing = 0; listing < 6 && listing < filteredListings.length; listing++) {
+        document.getElementById("item" + listing).style.background = "rgba(63, 186, 255, 0.8)";
+        document.getElementById("item" + listing + "_name").innerHTML = filteredListings[listing].name;
+        document.getElementById("item" + listing + "_price").innerHTML = filteredListings[listing].cost;
     }
+    console.log("test");
 };
 
 window.onload = function() {
