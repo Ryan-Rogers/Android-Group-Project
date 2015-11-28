@@ -60,7 +60,6 @@ updateHome = function() {
 itemDetails = function(item) {
     
     // Updating itemDetails page
-    currentItem = item;
     var filteredListings = filter();
     document.getElementById("itemDetailsTitle").innerHTML = filteredListings[item].name;
     document.getElementById("itemDetailsCost").innerHTML = filteredListings[item].cost;
@@ -70,6 +69,10 @@ itemDetails = function(item) {
     document.getElementById("itemDetailsVenues").innerHTML = filteredListings[item].venues;
     document.getElementById("itemDetailsSeller").innerHTML = filteredListings[item].user;
     display("itemDetails");
+    
+    // Setting currentItem for purchases
+    currentItem = item;
+    
 };
 
 // Filter items by search
