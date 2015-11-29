@@ -23,6 +23,7 @@ var display = function(contentId) {
         // Showing input content
         document.getElementById(contentId).style.visibility = "visible";
         document.getElementById(contentId).style.display = "table";
+        if(contentId == "options") updateOptions();
     }
 };
 
