@@ -1,26 +1,36 @@
-// Initializations
+// Declarations
 var userSession = "Guest";
 
+// App content
 var listings = [];
 var userHistory = [];
 var users = [];
+var messages = [];
 
-var updateHome;
+// Object constructor
+var createMessage;
+
+var newListing;
+
 var filter;
-var createListing;
 var currentItem;
 var buyItem;
 var itemDetails;
-var updateHistory;
 var historyDetails;
-var updateDetails;
-var updateOptions;
 var register;
 var login;
+var logout;
 
-// Functions
+// Page content update
+var updateHome;
+var updateDetails;
+var updateCommunication;
+var updateOptions;
+var updateHistory;
+
+// Initializations
 // Create a new listing if user is logged in
-createListing = function() {
+newListing = function() {
     
     // Checking for login
     if(userSession !== "Guest") {
@@ -44,18 +54,63 @@ createListing = function() {
         newListing.appointments 
                 = document.getElementById("newListingAppointments").value;
         newListing.venues = document.getElementById("newListingVenues").value;
-        newListing.user = user;
+        newListing.user = userSession;
         
-        // Adding to listings[]
+        // Updating listings
         listings.push(newListing);
-        console.log(newListing.name + " created");
-        
-        // Updating Home
         updateHome();
+        alert("You have successfully listed this item!");
         
     // User is logged out, routing to Login
     } else {
         alert("You must be logged in to list an item!");
+        display("login");
+    }
+};
+
+// Creating a new message
+createMessage = function(inputRecipient, inputSender, inputContent, 
+        inputStatus, inputDate) {
+    var message = {
+        recipient: inputRecipient,
+        sender: inputSender,
+        content: inputContent,
+        status: inputStatus,
+        date: inputDate
+    };
+    
+    // Returning new message and adding it to messages[]
+    messages.push(message);
+    return message;
+};
+
+// Update Communicaiton
+updateCommunication = function() {
+    
+    // Checking for login
+    if(userSession !== "Guest") {
+        
+        // Populating message list dynamically
+        var index;
+        
+        for(index = 0; index < messages.length; index++) {
+            
+            // Checking for messages to current user
+            if(messages[index].recipient == userSession) {
+                document.getElementById("communicationDiv").innerHTML 
+                        += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div id='history5_name'>Name</div><div id='history5_price'>Price</div></div></button></div>";
+            }
+            
+            // Indicating 0 messages if none found
+            if(document.getElementById("communicationDiv").innerHTML == "") {
+                document.getElementById("communicationDiv").innerHTML 
+                        == "<br>0 Messages";
+            }
+        }
+        
+    // User is logged out, routing to Login
+    } else {
+        alert("You must be logged in to view or send messages!");
         display("login");
     }
 };
@@ -156,8 +211,9 @@ buyItem = function() {
             // Updating History
             userHistory.push(currentItem);
             updateHistory();
+            alert("Purchased successfully!");
             
-        // Redirecting to Home
+        // Redirecting to Home if sold out
         } else {
             alert("This item is sold out!");
             display("home");
@@ -229,6 +285,7 @@ register = function() {
                 password: document.getElementById("newPassword").value};
         users.push(newUser);
         display("login");
+        alert("You have successfully registered!");
     }
 };
 
@@ -255,7 +312,15 @@ login = function() {
     if(!passwordCorrect) alert("Username not found or incorrect password!");
     else {
         display("options");
+        alert("You have successfully logged in!");
     }
+};
+
+// Logout
+logout = function() {
+    userSession = "Guest";
+    updateOptions();
+    alert("You have successfully logged out!");
 };
 
 // At load time

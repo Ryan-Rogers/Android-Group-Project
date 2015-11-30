@@ -24,6 +24,7 @@ var display = function(contentId) {
         document.getElementById(contentId).style.visibility = "visible";
         document.getElementById(contentId).style.display = "table";
         if(contentId == "options") updateOptions();
+        else if(contentId == "communication") updateCommunication();
     }
 };
 

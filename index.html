@@ -170,12 +170,23 @@
         		<tr class="page" id="options">
         			<td>
         			    <h1 class="title">Options</h1>
+        			    
+        			    
+        			    <br>
+        			    <div class="item" id="submitDiv" 
+        			            style="background: rgba(122, 217, 122, 0.8)">
+        			        <button class="submit" onclick="logout()">
+        			            <h3>Logout</h3>
+        			        </button>
+        			    </div>
         			</td>
         		</tr>
         		
         		<tr class="page" id="communication">
         			<td>
         			    <h1 class="title">Communication</h1>
+        			    
+        			    <div id="communicationDiv">0 Messages</div>
         			</td>
         		</tr>
         		
@@ -206,7 +217,7 @@
         			    
         			    <br>
         			    <div class="item" id="submitDiv" style="background: rgba(225, 225, 106, 0.7)">
-        			        <button class="submit" onclick="createListing()">
+        			        <button class="submit" onclick="newListing()">
         			            <h3>Create Listing</h3>
         			        </button>
         			    </div>
@@ -302,6 +313,9 @@
         			    </div>
         			    
         			    <br>
+        			    or
+        			    <br>
+        			    
         			    <div class="item" id="submitDiv" 
         			            style="background: rgba(255, 255, 255, 0.8)">
         			        <button class="submit" onclick="display('register')">
