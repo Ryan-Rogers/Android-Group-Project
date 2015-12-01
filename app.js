@@ -20,6 +20,8 @@ var historyDetails;
 var register;
 var login;
 var logout;
+var saveProfile;
+var findUser;
 
 // Page content update
 var updateHome;
@@ -87,31 +89,22 @@ createMessage = function(inputRecipient, inputSender, inputContent,
 // Update Communicaiton
 updateCommunication = function() {
     
-    // Checking for login
-    if(userSession !== "Guest") {
+    // Populating message list dynamically
+    var index;
+    
+    for(index = 0; index < messages.length; index++) {
         
-        // Populating message list dynamically
-        var index;
-        
-        for(index = 0; index < messages.length; index++) {
-            
-            // Checking for messages to current user
-            if(messages[index].recipient == userSession) {
-                document.getElementById("communicationDiv").innerHTML 
-                        += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div id='history5_name'>Name</div><div id='history5_price'>Price</div></div></button></div>";
-            }
-            
-            // Indicating 0 messages if none found
-            if(document.getElementById("communicationDiv").innerHTML == "") {
-                document.getElementById("communicationDiv").innerHTML 
-                        == "<br>0 Messages";
-            }
+        // Checking for messages to current user
+        if(messages[index].recipient == userSession) {
+            document.getElementById("communicationDiv").innerHTML 
+                    += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div id='history5_name'>Name</div><div id='history5_price'>Price</div></div></button></div>";
         }
-        
-    // User is logged out, routing to Login
-    } else {
-        alert("You must be logged in to view or send messages!");
-        display("login");
+    }
+    
+    // Indicating 0 messages if none found
+    if(document.getElementById("communicationDiv").innerHTML.length == 0) {
+        document.getElementById("communicationDiv").innerHTML 
+                = "<br>0 Messages";
     }
 };
 
@@ -259,11 +252,38 @@ updateOptions = function() {
     
     // Checking for login
     if(userSession !== "Guest") {
+        var currentUser;
+        users.forEach(function(user) {
+            if(user.username == userSession) {
+                currentUser = user;
+            }
+        })
+        
+        document.getElementById("profileTitle").innerHTML = currentUser.username;
+        document.getElementById("profileName").value = currentUser.name;
+        document.getElementById("profileEmail").value = currentUser.email;
+        document.getElementById("profilePassword").value = currentUser.password;
         
     // User is logged out, routing to Login
     } else {
         display("login");
     }
+};
+
+// Saving profile information
+saveProfile = function() {
+    var currentUser;
+    users.forEach(function(user) {
+        if(user.username == userSession) {
+            currentUser = user;
+        }
+    })
+    
+    currentUser.name = document.getElementById("profileName").value;
+    currentUser.email = document.getElementById("profileEmail").value;
+    currentUser.password = document.getElementById("profilePassword").value;
+    
+    alert("Profile updated successfully!");
 };
 
 // Registering a new user if unique
@@ -281,8 +301,12 @@ register = function() {
     
     // Creating unique new user
     if(usernameUnique) {
-        var newUser = {username: newUsername, 
-                password: document.getElementById("newPassword").value};
+        var newUser = {
+            username: newUsername, 
+            password: document.getElementById("newPassword").value,
+            name: document.getElementById("newName").value,
+            email: document.getElementById("newEmail").value
+        };
         users.push(newUser);
         display("login");
         alert("You have successfully registered!");

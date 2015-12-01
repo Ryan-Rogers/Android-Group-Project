@@ -169,12 +169,35 @@
         		
         		<tr class="page" id="options">
         			<td>
-        			    <h1 class="title">Options</h1>
+        			    <h1 class="title" id="profileTitle">Profile</h1>
         			    
+        			    <div class="item" style="background: rgba(122, 217, 122, 0.8)">
+        			        <br>Name<br>
+        			        <input type="text" id="profileName">
+        			        <br>
+        			        
+        			        <br>Email<br>
+        			        <input type="text" id="profileEmail">
+        			        <br>
+        			        
+        			        <br>Password<br>
+        			        <input type="text" id="profilePassword">
+        			        <br>
+        			        
+        			        <br>
+            			    <div class="item" id="submitDiv" 
+            			            style="background: rgba(0, 0, 0, 0.3)">
+            			        <button class="submit" style="color: white" 
+            			                onclick="saveProfile()">
+            			            <h3>Update</h3>
+            			        </button>
+            			    </div>
+            			    <br>
+        			    </div>
         			    
         			    <br>
         			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(122, 217, 122, 0.8)">
+        			            style="background: rgba(122, 217, 122, 0.9)">
         			        <button class="submit" onclick="logout()">
         			            <h3>Logout</h3>
         			        </button>
@@ -186,7 +209,7 @@
         			<td>
         			    <h1 class="title">Communication</h1>
         			    
-        			    <div id="communicationDiv">0 Messages</div>
+        			    <div id="communicationDiv"></div>
         			</td>
         		</tr>
         		
@@ -264,24 +287,30 @@
         		
         		<tr class="page" id="register">
         			<td>
-        			    <h1 class="title">Register</h1>
+        			    <h1 class="title">Registration</h1>
         			    
-        			    <div class="item" id="loginDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
+        			    <div class="item" style="color: white; 
+        			            background: rgba(0, 0, 0, 0.7)">
         			        
-        			        <br>Username
+        			        <br>Name<br>
+        			        <input type="text" id="newName">
+        			        
+        			        <br><br>Email<br>
+        			        <input type="text" id="newEmail">
+        			        
+        			        <br><br>Username<br>
         			        <input type="text" id="newUsername">
         			        
-        			        <br>
-        			        <br>Password
+        			        <br><br>Password<br>
         			        <input type="password" id="newPassword">
         			        <br><br>
         			    </div>
         			    
         			    <br>
-        			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
-        			        <button class="submit" onclick="register()">
+        			    <div class="item" id="submitDiv"
+        			            style="background: rgba(0, 0, 0, 0.7)">
+        			        <button class="submit" style="color: white" 
+        			                onclick="register()">
         			            <h3>Register</h3>
         			        </button>
         			    </div>
@@ -302,24 +331,24 @@
         			        <br>Password
         			        <input type="password" id="password">
         			        <br><br>
+        			        
+            			    <div class="item" id="submitDiv" style="width: 30%; 
+            			            background: rgba(0, 0, 0, 0.5)">
+            			        <button class="submit" onclick="login()" 
+            			                style="color: white">
+            			            <h3>Login</h3>
+            			        </button>
+            			    </div>
+            			    
+            			    <br>
         			    </div>
         			    
         			    <br>
-        			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
-        			        <button class="submit" onclick="login()">
-        			            <h3>Login</h3>
-        			        </button>
-        			    </div>
         			    
-        			    <br>
-        			    or
-        			    <br>
-        			    
-        			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
+        			    <div class="item" id="submitDiv" style="width: 70%; 
+        			            background: rgba(255, 255, 255, 0.8)">
         			        <button class="submit" onclick="display('register')">
-        			            <h3>Register</h3>
+        			            <h3>Go to Registration</h3>
         			        </button>
         			    </div>
         			</td>
