@@ -22,6 +22,7 @@ var login;
 var logout;
 var saveProfile;
 var findUser;
+var recoverPassword;
 
 // Page content update
 var updateHome;
@@ -345,6 +346,22 @@ logout = function() {
     userSession = "Guest";
     updateOptions();
     alert("You have successfully logged out!");
+};
+
+// Reseting password
+recoverPassword = function() {
+    var passwordReset = false;
+    users.forEach(function(user) {
+        
+        // Reseting password and notifying user
+        if(user.username == document.getElementById("username").value) {
+            user.password = Math.floor(Math.random() * 9000) + 1000;
+            console.log("Your temporary password is: " + user.password);
+            passwordReset = true;
+        }
+        
+        if(!passwordReset) console.log("User not found");
+    })
 };
 
 // At load time
