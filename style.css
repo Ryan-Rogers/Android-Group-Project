@@ -93,6 +93,12 @@ body {
             border: 0px;
             color: rgba(0, 0, 0, 0.8);
         }
+    
+    .link {
+        background: none;
+        color: blue;
+        border: 0px;
+    }
         
 .alignLeft {
     text-align: left;

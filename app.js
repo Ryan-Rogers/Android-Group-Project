@@ -23,6 +23,7 @@ var logout;
 var saveProfile;
 var findUser;
 var recoverPassword;
+var viewProfile;
 
 // Page content update
 var updateHome;
@@ -30,6 +31,7 @@ var updateDetails;
 var updateCommunication;
 var updateOptions;
 var updateHistory;
+var updateProfile;
 
 // Initializations
 // Create a new listing if user is logged in
@@ -271,6 +273,15 @@ updateOptions = function() {
     }
 };
 
+// Update Profile page
+updateProfile = function(profileUsername) {
+    var profileUser;
+    users.forEach(function(user) {
+        if(user.username == profileUsername) profileUser = user;
+    })
+    document.getElementById("profileUsername").innerHTML = profileUser.username;
+};
+
 // Saving profile information
 saveProfile = function() {
     var currentUser;
@@ -362,6 +373,12 @@ recoverPassword = function() {
         
         if(!passwordReset) console.log("User not found");
     })
+};
+
+// Displays the user profile with the input location for the user name
+viewProfile = function(usernameLocation) {
+    updateProfile(document.getElementById(usernameLocation).innerHTML);
+    display("profile");
 };
 
 // At load time
