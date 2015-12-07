@@ -1,397 +1,420 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-    	<meta charset="utf-8">
-    	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-        <link href="style.css" rel="stylesheet">
-        <!-- <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script> -->
-    </head>
-    
-    <body>
-        <div id="navigation">
-            <button onclick="display('home')"><img src="home.png"></button>
-            <button onclick="display('history')"><img src="history.png"></button>
-            <button onclick="display('communication')"><img src="communication.png"></button>
-            <button onclick="display('sell')"><img src="sell.png"></button>
-            <button onclick="display('options')"><img src="options.png"></button>
-        </div>
-        
-        <div id="content">
-            <table>
-        		<tr class="page" id="home">
-        			<td>
-        			    <h1 class="title">Home</h1>
-        			    
-        			    <div class="item" style="background: rgba(63, 186, 255, 0.7)">
-        			        <br>Search
-        			        
-        			        <br>
-        			        <input type="text" id="search" oninput="updateHome()">
-        			        <br><br>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item0" class="item">
-        			        <button class="itemButton" onclick='itemDetails("0")'>
-            			        <div class="alignLeft">
-            			            <div id="item0_name">&nbsp</div>
-            			            <div id="item0_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item1" class="item">
-        			        <button class="itemButton" onclick='itemDetails("1")'>
-            			        <div class="alignLeft">
-            			            <div id="item1_name">&nbsp</div>
-            			            <div id="item1_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item2" class="item">
-        			        <button class="itemButton" onclick='itemDetails("2")'>
-            			        <div class="alignLeft">
-            			            <div id="item2_name">&nbsp</div>
-            			            <div id="item2_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item3" class="item">
-        			        <button class="itemButton" onclick='itemDetails("3")'>
-            			        <div class="alignLeft">
-            			            <div id="item3_name">&nbsp</div>
-            			            <div id="item3_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item4" class="item">
-        			        <button class="itemButton" onclick='itemDetails("4")'>
-            			        <div class="alignLeft">
-            			            <div id="item4_name">&nbsp</div>
-            			            <div id="item4_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="item5" class="item">
-        			        <button class="itemButton" onclick='itemDetails("5")'>
-            			        <div class="alignLeft">
-            			            <div id="item5_name">&nbsp</div>
-            			            <div id="item5_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="history">
-        			<td>
-        			    <h1 class="title">History</h1>
-        			    
-        			    <div class="item" style="background: rgba(226, 121, 226, 0.7)">
-        			        <br>Search
-        			        
-        			        <br>
-        			        <input type="text" id="searchHistory" oninput="updateHistory()">
-        			        <br><br>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history0" class="history">
-        			        <button class="itemButton" onclick='historyDetails("0")'>
-            			        <div class="alignLeft">
-            			            <div id="history0_name">&nbsp</div>
-            			            <div id="history0_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history1" class="history">
-        			        <button class="itemButton" onclick='historyDetails("1")'>
-            			        <div class="alignLeft">
-            			            <div id="history1_name">&nbsp</div>
-            			            <div id="history1_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history2" class="history">
-        			        <button class="itemButton" onclick='historyDetails("2")'>
-            			        <div class="alignLeft">
-            			            <div id="history2_name">&nbsp</div>
-            			            <div id="history2_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history3" class="history">
-        			        <button class="itemButton" onclick='historyDetails("3")'>
-            			        <div class="alignLeft">
-            			            <div id="history3_name">&nbsp</div>
-            			            <div id="history3_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history4" class="history">
-        			        <button class="itemButton" onclick='historyDetails("4")'>
-            			        <div class="alignLeft">
-            			            <div id="history4_name">&nbsp</div>
-            			            <div id="history4_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div id="history5" class="history">
-        			        <button class="itemButton" onclick='historyDetails("5")'>
-            			        <div class="alignLeft">
-            			            <div id="history5_name">&nbsp</div>
-            			            <div id="history5_price">&nbsp</div>
-            			        </div>
-        			        </button>
-        			    </div>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="options">
-        			<td>
-        			    <h1 class="title" id="profileTitle">Profile</h1>
-        			    
-        			    <div class="item" style="background: rgba(122, 217, 122, 0.8)">
-        			        <br>Name<br>
-        			        <input type="text" id="profileName">
-        			        <br>
-        			        
-        			        <br>Email<br>
-        			        <input type="text" id="profileEmail">
-        			        <br>
-        			        
-        			        <br>Password<br>
-        			        <input type="text" id="profilePassword">
-        			        <br>
-        			        
-        			        <br>
-            			    <div class="item" id="submitDiv" 
-            			            style="background: rgba(0, 0, 0, 0.3)">
-            			        <button class="submit" style="color: white" 
-            			                onclick="saveProfile()">
-            			            <h3>Update</h3>
-            			        </button>
-            			    </div>
-            			    <br>
-        			    </div>
-        			    
-        			    <br>
-        			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(122, 217, 122, 0.9)">
-        			        <button class="submit" onclick="logout()">
-        			            <h3>Logout</h3>
-        			        </button>
-        			    </div>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="communication">
-        			<td>
-        			    <h1 class="title">Communication</h1>
-        			    
-        			    <div id="communicationDiv"></div>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="sell">
-        			<td>
-        			    <h1 class="title">Sell</h1>
-        			    
-        			    <div class="item" style="background: rgba(225, 225, 106, 0.8)">
-            			    <br>Name
-            			    <br><input type="text" id="newListingName">
-            			    
-            			    <br><br>Cost
-                			<br><input type="text" id="newListingCost">
-                			
-            			    <br><br>Quantity
-                			<br><input type="text" id="newListingQuantity">
-                			
-            			    <br><br>Delivery Type
-                			<br><input type="text" id="newListingType">
-                			
-            			    <br><br>Available Appointments
-                			<br><input type="text" id="newListingAppointments">
-                			
-            			    <br><br>Available Venues
-                			<br><input type="text" id="newListingVenues">
-                			<br><br>
-        			    </div>
-        			    
-        			    <br>
-        			    <div class="item" id="submitDiv" style="background: rgba(225, 225, 106, 0.7)">
-        			        <button class="submit" onclick="newListing()">
-        			            <h3>Create Listing</h3>
-        			        </button>
-        			    </div>
-        			    <br>
-        			</td>
-        		</tr>
-        		
-        		<!-- Unlisted pages -->
-        		<tr class="page" id="itemDetails">
-        			<td>
-        			    <h1 class="title" id="itemDetailsTitle">null</h1>
-        			    
-        			    <div class="item" style="background: rgba(255, 255, 255, 0.6); padding: 7%">
-        			        
-        			        Cost
-        			        <b><div id="itemDetailsCost">null</div></b>
-        			        
-        			        <br>Quantity
-        			        <b><div id="itemDetailsQuantity">null</div></b>
-        			        
-        			        <br>Delivery
-        			        <b><div id="itemDetailsType">null</div></b>
-        			        
-        			        <br>Appointments
-        			        <b><div id="itemDetailsAppointments">null</div></b>
-        			        
-        			        <br>Venues
-        			        <b><div id="itemDetailsVenues">null</div></b>
-        			        
-        			        <br>Seller
-        			        <b><div id="itemDetailsSeller">null</div></b>
-        			        <button class="link" onclick="viewProfile('itemDetailsSeller')">
-        			            View Profile
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    <div class="item" id="submitDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
-        			        <button class="submit" onclick="buyItem()">
-        			            <h3>Buy</h3>
-        			        </button>
-        			    </div>
-        			    <br>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="register">
-        			<td>
-        			    <h1 class="title">Registration</h1>
-        			    
-        			    <div class="item" style="color: white; 
-        			            background: rgba(0, 0, 0, 0.7)">
-        			        
-        			        <br>Name<br>
-        			        <input type="text" id="newName">
-        			        
-        			        <br><br>Email<br>
-        			        <input type="text" id="newEmail">
-        			        
-        			        <br><br>Username<br>
-        			        <input type="text" id="newUsername">
-        			        
-        			        <br><br>Password<br>
-        			        <input type="password" id="newPassword">
-        			        <br><br>
-        			    </div>
-        			    
-        			    <br>
-        			    <div class="item" id="submitDiv"
-        			            style="background: rgba(0, 0, 0, 0.7)">
-        			        <button class="submit" style="color: white" 
-        			                onclick="register()">
-        			            <h3>Register</h3>
-        			        </button>
-        			    </div>
-        			</td>
-        		</tr>
-        		
-        		<tr class="page" id="login">
-        			<td>
-        			    <h1 class="title">Login</h1>
-        			    
-        			    <div class="item" id="loginDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
-        			        
-        			        <br>Username<br>
-        			        <input type="text" id="username">
-        			        
-        			        <br>
-        			        <br>Password<br>
-        			        <input type="password" id="password">
-        			        <br><br>
-        			        
-            			    <div class="item" id="submitDiv" style="width: 30%; 
-            			            background: rgba(0, 0, 0, 0.5)">
-            			        <button class="submit" onclick="login()" 
-            			                style="color: white">
-            			            <h3>Login</h3>
-            			        </button>
-            			    </div>
-            			    
-            			    <br>
-        			    </div>
-        			    
-        			    <br>
-        			    
-        			    <div class="item" id="submitDiv" style="width: 70%; 
-        			            background: rgba(255, 255, 255, 0.8)">
-        			        <button class="submit" onclick="display('register')">
-        			            <h3>Go to Registration</h3>
-        			        </button>
-        			    </div>
-        			    
-        			    <br>
-        			    
-        			    <div class="item" id="submitDiv" style="width: 70%; 
-        			            background: rgba(255, 255, 255, 0.6)">
-        			        <button class="submit" onclick="recoverPassword()">
-        			            <h3>Recover Password</h3>
-        			        </button>
-        			    </div>
-        			</td>
-        		</tr>
-        		
-        		
-        		
-        		<tr class="page" id="profile">
-        			<td>
-        			    <h1 id="profileUsername" class="title">Error loading username<h1>
-        			    <div class="item" id="loginDiv" 
-        			            style="background: rgba(255, 255, 255, 0.8)">
-        			        
-            			    <div class="item" id="submitDiv" style="width: 30%; 
-            			            background: rgba(0, 0, 0, 0.5)">
-            			        <button class="submit" onclick="login()" 
-            			                style="color: white">
-            			            <h3>Login</h3>
-            			        </button>
-            			        
-            			        <div id=""></div>
-            			    </div>
-            			    <br>
-        			    </div>
-        			    <br>
-        			</td>
-        		</tr>
-            </table>
-        </div>
-        
-        <script src="navigation.js"></script>
-        <script src="app.js"></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="style.css" rel="stylesheet">
+    <!-- <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script> -->
+</head>
+
+<body>
+<div id="navigation">
+    <button onclick="display('home')"><img src="home.png"></button>
+    <button onclick="display('history')"><img src="history.png"></button>
+    <button onclick="display('communication')"><img src="communication.png"></button>
+    <button onclick="display('sell')"><img src="sell.png"></button>
+    <button onclick="display('options')"><img src="options.png"></button>
+</div>
+
+<div id="content">
+    <table>
+		<tr class="page" id="home">
+			<td>
+			    <h1 class="title">Home</h1>
+			    
+			    <div class="item" style="background: rgba(63, 186, 255, 0.7)">
+			        <br>Search
+			        
+			        <br>
+			        <input type="text" id="search" oninput="updateHome()">
+			        <br><br>
+			    </div>
+			    
+			    <br>
+			    <div id="item0" class="item">
+			        <button class="itemButton" onclick='itemDetails("0")'>
+    			        <div class="alignLeft">
+    			            <div id="item0_name">&nbsp</div>
+    			            <div id="item0_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="item1" class="item">
+			        <button class="itemButton" onclick='itemDetails("1")'>
+    			        <div class="alignLeft">
+    			            <div id="item1_name">&nbsp</div>
+    			            <div id="item1_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="item2" class="item">
+			        <button class="itemButton" onclick='itemDetails("2")'>
+    			        <div class="alignLeft">
+    			            <div id="item2_name">&nbsp</div>
+    			            <div id="item2_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="item3" class="item">
+			        <button class="itemButton" onclick='itemDetails("3")'>
+    			        <div class="alignLeft">
+    			            <div id="item3_name">&nbsp</div>
+    			            <div id="item3_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="item4" class="item">
+			        <button class="itemButton" onclick='itemDetails("4")'>
+    			        <div class="alignLeft">
+    			            <div id="item4_name">&nbsp</div>
+    			            <div id="item4_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="item5" class="item">
+			        <button class="itemButton" onclick='itemDetails("5")'>
+    			        <div class="alignLeft">
+    			            <div id="item5_name">&nbsp</div>
+    			            <div id="item5_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="history">
+			<td>
+			    <h1 class="title">History</h1>
+			    
+			    <div class="item" style="background: rgba(226, 121, 226, 0.7)">
+			        <br>Search
+			        
+			        <br>
+			        <input type="text" id="searchHistory" oninput="updateHistory()">
+			        <br><br>
+			    </div>
+			    
+			    <br>
+			    <div id="history0" class="history">
+			        <button class="itemButton" onclick='historyDetails("0")'>
+    			        <div class="alignLeft">
+    			            <div id="history0_name">&nbsp</div>
+    			            <div id="history0_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="history1" class="history">
+			        <button class="itemButton" onclick='historyDetails("1")'>
+    			        <div class="alignLeft">
+    			            <div id="history1_name">&nbsp</div>
+    			            <div id="history1_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="history2" class="history">
+			        <button class="itemButton" onclick='historyDetails("2")'>
+    			        <div class="alignLeft">
+    			            <div id="history2_name">&nbsp</div>
+    			            <div id="history2_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="history3" class="history">
+			        <button class="itemButton" onclick='historyDetails("3")'>
+    			        <div class="alignLeft">
+    			            <div id="history3_name">&nbsp</div>
+    			            <div id="history3_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="history4" class="history">
+			        <button class="itemButton" onclick='historyDetails("4")'>
+    			        <div class="alignLeft">
+    			            <div id="history4_name">&nbsp</div>
+    			            <div id="history4_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div id="history5" class="history">
+			        <button class="itemButton" onclick='historyDetails("5")'>
+    			        <div class="alignLeft">
+    			            <div id="history5_name">&nbsp</div>
+    			            <div id="history5_price">&nbsp</div>
+    			        </div>
+			        </button>
+			    </div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="options">
+			<td>
+			    <h1 class="title" id="profileTitle">Profile</h1>
+			    
+			    <div class="item" style="background: rgba(122, 217, 122, 0.8)">
+			        <br>Name<br>
+			        <input type="text" id="profileName">
+			        <br>
+			        
+			        <br>Email<br>
+			        <input type="text" id="profileEmail">
+			        <br>
+			        
+			        <br>Password<br>
+			        <input type="text" id="profilePassword">
+			        <br>
+			        
+			        <br>
+    			    <div class="item" id="submitDiv" 
+    			            style="background: rgba(0, 0, 0, 0.3)">
+    			        <button class="submit" style="color: white" 
+    			                onclick="saveProfile()">
+    			            <h3>Update</h3>
+    			        </button>
+    			    </div>
+    			    <br>
+			    </div>
+			    
+			    <br>
+			    <div class="item" id="submitDiv" 
+			            style="background: rgba(122, 217, 122, 0.9)">
+			        <button class="submit" onclick="logout()">
+			            <h3>Logout</h3>
+			        </button>
+			    </div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="communication">
+			<td>
+			    <h1 class="title">Communication</h1>
+			    
+			    <div id="communicationDiv"></div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="sell">
+			<td>
+			    <h1 class="title">Sell</h1>
+			    
+			    <div class="item" style="background: rgba(225, 225, 106, 0.8)">
+    			    <br>Name
+    			    <br><input type="text" id="newListingName">
+    			    
+    			    <br><br>Cost
+        			<br><input type="text" id="newListingCost">
+        			
+    			    <br><br>Quantity
+        			<br><input type="text" id="newListingQuantity">
+        			
+    			    <br><br>Delivery Type
+        			<br><input type="text" id="newListingType">
+        			
+    			    <br><br>Available Appointments
+        			<br><input type="text" id="newListingAppointments">
+        			
+    			    <br><br>Available Venues
+        			<br><input type="text" id="newListingVenues">
+        			<br><br>
+			    </div>
+			    
+			    <br>
+			    <div class="item" id="submitDiv" style="background: rgba(225, 225, 106, 0.7)">
+			        <button class="submit" onclick="newListing()">
+			            <h3>Create Listing</h3>
+			        </button>
+			    </div>
+			    <br>
+			</td>
+		</tr>
+		
+		<!-- Unlisted pages -->
+		<tr class="page" id="itemDetails">
+			<td>
+			    <h1 class="title" id="itemDetailsTitle">null</h1>
+			    
+			    <div class="item" style="background: rgba(255, 255, 255, 0.6); padding: 7%">
+			        
+			        Cost
+			        <b><div id="itemDetailsCost">null</div></b>
+			        
+			        <br>Quantity
+			        <b><div id="itemDetailsQuantity">null</div></b>
+			        
+			        <br>Delivery
+			        <b><div id="itemDetailsType">null</div></b>
+			        
+			        <br>Appointments
+			        <b><div id="itemDetailsAppointments">null</div></b>
+			        
+			        <br>Venues
+			        <b><div id="itemDetailsVenues">null</div></b>
+			        
+			        <br>Seller
+			        <b><div id="itemDetailsSeller">null</div></b>
+			        <button class="link" onclick="viewProfile('itemDetailsSeller')">
+			            View Profile
+			        </button>
+			    </div>
+			    
+			    <br>
+			    <div class="item" id="submitDiv" 
+			            style="background: rgba(255, 255, 255, 0.8)">
+			        <button class="submit" onclick="buyItem()">
+			            <h3>Buy</h3>
+			        </button>
+			    </div>
+			    <br>
+			</td>
+		</tr>
+		
+		<tr class="page" id="register">
+			<td>
+			    <h1 class="title">Registration</h1>
+			    
+			    <div class="item" style="color: white; 
+			            background: rgba(0, 0, 0, 0.7)">
+			        
+			        <br>Name<br>
+			        <input type="text" id="newName">
+			        
+			        <br><br>Email<br>
+			        <input type="text" id="newEmail">
+			        
+			        <br><br>Username<br>
+			        <input type="text" id="newUsername">
+			        
+			        <br><br>Password<br>
+			        <input type="password" id="newPassword">
+			        <br><br>
+			    </div>
+			    
+			    <br>
+			    <div class="item" id="submitDiv"
+			            style="background: rgba(0, 0, 0, 0.7)">
+			        <button class="submit" style="color: white" 
+			                onclick="register()">
+			            <h3>Register</h3>
+			        </button>
+			    </div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="login">
+			<td>
+			    <h1 class="title">Login</h1>
+			    
+			    <div class="item" id="loginDiv" 
+			            style="background: rgba(255, 255, 255, 0.8)">
+			        
+			        <br>Username<br>
+			        <input type="text" id="username">
+			        
+			        <br>
+			        <br>Password<br>
+			        <input type="password" id="password">
+			        <br><br>
+			        
+    			    <div class="item" id="submitDiv" style="width: 30%; 
+    			            background: rgba(0, 0, 0, 0.5)">
+    			        <button class="submit" onclick="login()" 
+    			                style="color: white">
+    			            <h3>Login</h3>
+    			        </button>
+    			    </div>
+    			    
+    			    <br>
+			    </div>
+			    
+			    <br>
+			    
+			    <div class="item" id="submitDiv" style="width: 70%; 
+			            background: rgba(255, 255, 255, 0.8)">
+			        <button class="submit" onclick="display('register')">
+			            <h3>Go to Registration</h3>
+			        </button>
+			    </div>
+			    
+			    <br>
+			    
+			    <div class="item" id="submitDiv" style="width: 70%; 
+			            background: rgba(255, 255, 255, 0.6)">
+			        <button class="submit" onclick="recoverPassword()">
+			            <h3>Recover Password</h3>
+			        </button>
+			    </div>
+			</td>
+		</tr>
+		
+		<tr class="page" id="profile">
+			<td>
+			    <h1 id="profileUsername" class="title">Error loading username</h1>
+			    <div class="item" id="loginDiv" 
+			            style="background: rgba(122, 217, 122, 0.8)">
+		            
+		            <br>
+			        <button class="submit" onclick="profileMessage()" 
+			                style="color: white; background: rgba(0, 0, 0, 0.6); width: 40%">
+			            <h3>Message</h3>
+			        </button>
+			        <br><br>
+			    </div>
+		        
+		        <br>
+		        <button class="submit" onclick="profileListings()" 
+		                style="color: white; background: rgba(122, 217, 122, 0.6); width: 60%">
+		            <h3>View Listings</h3>
+		        </button>
+			    <br>
+			</td>
+		</tr>
+		
+		<tr class="page" id="message">
+			<td>
+			    <h1 class="title">New Message</h1>
+			        
+			    <div class="item" style="background: rgba(122, 217, 122, 0.8) ">
+			        
+    		        <br>Recipient<br>
+    		        <input id="messageUsername" type="text" style="width: 40%"/>
+        		    
+    		        <br><br>Body
+    		        <input id="messageText" type="text" style="width: 90%"/>
+			        
+			        <br><br>
+			        <button class="submit" onclick="sendMessage()" 
+			                style="color: white; background: rgba(0, 0, 0, 0.6); width: 70%">
+			            <h3>Send</h3>
+			        </button>
+			        <br><br>
+			    </div>
+			    <br>
+			</td>
+		</tr>
+    </table>
+</div>
+
+<script src="navigation.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

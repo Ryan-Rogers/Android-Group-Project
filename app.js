@@ -24,6 +24,7 @@ var saveProfile;
 var findUser;
 var recoverPassword;
 var viewProfile;
+var profileMessage;
 
 // Page content update
 var updateHome;
@@ -32,6 +33,8 @@ var updateCommunication;
 var updateOptions;
 var updateHistory;
 var updateProfile;
+var updateMessage;
+var sendMessage;
 
 // Initializations
 // Create a new listing if user is logged in
@@ -89,18 +92,29 @@ createMessage = function(inputRecipient, inputSender, inputContent,
     return message;
 };
 
+// Sending a new message
+sendMessage = function() {
+    createMessage(document.getElementById("messageUsername").value, 
+            userSession, document.getElementById("messageText").value,
+            "Unread", new Date());
+    alert("Message sent successfully!");
+    updateCommunication();
+};
+
 // Update Communicaiton
 updateCommunication = function() {
     
+    // Clearing messages
+    document.getElementById("communicationDiv").innerHTML = "";
+    
     // Populating message list dynamically
     var index;
-    
     for(index = 0; index < messages.length; index++) {
         
         // Checking for messages to current user
         if(messages[index].recipient == userSession) {
             document.getElementById("communicationDiv").innerHTML 
-                    += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div id='history5_name'>Name</div><div id='history5_price'>Price</div></div></button></div>";
+                    += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div>From: " + messages[index].sender + "</div><div>" + messages[index].content + "</div></div></button></div>";
         }
     }
     
@@ -379,6 +393,16 @@ recoverPassword = function() {
 viewProfile = function(usernameLocation) {
     updateProfile(document.getElementById(usernameLocation).innerHTML);
     display("profile");
+};
+
+// Creating a new message from a profile screen
+profileMessage = function() {
+    updateMessage(document.getElementById("profileUsername").innerHTML);
+    display("message");
+};
+
+updateMessage = function(recipient) {
+    document.getElementById("messageUsername").value = recipient;
 };
 
 // At load time
