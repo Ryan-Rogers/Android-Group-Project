@@ -9,13 +9,12 @@ var messages = [];
 
 // Object constructor
 var createMessage;
-
 var newListing;
-
 var filter;
 var currentItem;
 var buyItem;
 var itemDetails;
+var displayMessage;
 var historyDetails;
 var register;
 var login;
@@ -35,8 +34,39 @@ var updateHistory;
 var updateProfile;
 var updateMessage;
 var sendMessage;
+var sendEmail;
+
+/* $('#registerButton').click(function() {
+  $.ajax({
+        type: 'POST',
+        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        data: {
+        'key': '9MX6yJxWVFO75qk3z4ME4A',
+        'message': {
+            'from_email': 'mandrill@ryanrogers.org',
+            'to': [{
+                    'email': 'ryan@ryanrogers.org',
+                    'name': 'RECIPIENT NAME (OPTIONAL)',
+                    'type': 'to'
+                },{
+                    'email': 'ryan2@ryanrogers.org',
+                    'name': 'ANOTHER RECIPIENT NAME (OPTIONAL)',
+                    'type': 'to'
+                }],
+                'autotext': 'true',
+                'subject': 'YOUR SUBJECT HERE!',
+                'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+            }
+        }
+    }).done(function(response) {
+        console.log(response); // if you"re into that sorta thing
+    });
+}); */
 
 // Initializations
+sendEmail = function() {
+};
+
 // Create a new listing if user is logged in
 newListing = function() {
     
@@ -114,7 +144,7 @@ updateCommunication = function() {
         // Checking for messages to current user
         if(messages[index].recipient == userSession) {
             document.getElementById("communicationDiv").innerHTML 
-                    += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton'><div class='alignLeft'><div>From: " + messages[index].sender + "</div><div>" + messages[index].content + "</div></div></button></div>";
+                    += "<br><div class='item' style='background: rgba(255, 117, 117, 0.8)'><button class='itemButton' onclick='displayMessage()'><div class='alignLeft'><div>From: " + messages[index].sender + "</div><div>" + messages[index].content + "</div></div></button></div>";
         }
     }
     
@@ -123,6 +153,11 @@ updateCommunication = function() {
         document.getElementById("communicationDiv").innerHTML 
                 = "<br>0 Messages";
     }
+};
+
+// Displaying message page
+displayMessage = function() {
+    display("message");
 };
 
 // Update Home
@@ -327,19 +362,27 @@ register = function() {
     
     // Creating unique new user
     if(usernameUnique) {
-        var newUser = {
-            username: newUsername, 
-            password: document.getElementById("newPassword").value,
-            name: document.getElementById("newName").value,
-            email: document.getElementById("newEmail").value
-        };
-        users.push(newUser);
-        display("login");
-        alert("You have successfully registered!");
+        
+        // Checking for password length >= 5
+        if(document.getElementById("newPassword").value.length >= 6) {
+            var newUser = {
+                username: newUsername, 
+                password: document.getElementById("newPassword").value,
+                name: document.getElementById("newName").value,
+                email: document.getElementById("newEmail").value
+            };
+            users.push(newUser);
+            display("login");
+            sendEmail();
+            alert("You have successfully registered!");
+            
+        } else {
+            alert("Your password must be at least 5 characters!");
+        }
     }
 };
 
-// Login
+// Logging in
 login = function() {
     var passwordCorrect = false;
     var usernameEntered = document.getElementById("username").value;
@@ -366,7 +409,7 @@ login = function() {
     }
 };
 
-// Logout
+// Logging out
 logout = function() {
     userSession = "Guest";
     updateOptions();
@@ -381,7 +424,7 @@ recoverPassword = function() {
         // Reseting password and notifying user
         if(user.username == document.getElementById("username").value) {
             user.password = Math.floor(Math.random() * 9000) + 1000;
-            console.log("Your temporary password is: " + user.password);
+            alert("Your temporary password is: " + user.password);
             passwordReset = true;
         }
         
@@ -401,6 +444,7 @@ profileMessage = function() {
     display("message");
 };
 
+// Updates the Message screen with the input recipient
 updateMessage = function(recipient) {
     document.getElementById("messageUsername").value = recipient;
 };

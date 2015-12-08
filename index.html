@@ -290,7 +290,7 @@
 		
 		<tr class="page" id="register">
 			<td>
-			    <h1 class="title">Registration</h1>
+			    <h1 class="title" style="color: black">Registration</h1>
 			    
 			    <div class="item" style="color: white; 
 			            background: rgba(0, 0, 0, 0.7)">
@@ -312,7 +312,7 @@
 			    <br>
 			    <div class="item" id="submitDiv"
 			            style="background: rgba(0, 0, 0, 0.7)">
-			        <button class="submit" style="color: white" 
+			        <button class="submit" style="color: white" id="registerButton" 
 			                onclick="register()">
 			            <h3>Register</h3>
 			        </button>
@@ -356,7 +356,6 @@
 			    </div>
 			    
 			    <br>
-			    
 			    <div class="item" id="submitDiv" style="width: 70%; 
 			            background: rgba(255, 255, 255, 0.6)">
 			        <button class="submit" onclick="recoverPassword()">
@@ -374,18 +373,14 @@
 		            
 		            <br>
 			        <button class="submit" onclick="profileMessage()" 
-			                style="color: white; background: rgba(0, 0, 0, 0.6); width: 40%">
+			                style="color: white; background: rgba(0, 0, 0, 0.2); width: 40%">
 			            <h3>Message</h3>
 			        </button>
 			        <br><br>
 			    </div>
 		        
 		        <br>
-		        <button class="submit" onclick="profileListings()" 
-		                style="color: white; background: rgba(122, 217, 122, 0.6); width: 60%">
-		            <h3>View Listings</h3>
-		        </button>
-			    <br>
+		        <div id="profileListings">0 Listings</div>
 			</td>
 		</tr>
 		
@@ -393,7 +388,7 @@
 			<td>
 			    <h1 class="title">New Message</h1>
 			        
-			    <div class="item" style="background: rgba(122, 217, 122, 0.8) ">
+			    <div class="item" style="background: rgba(255, 117, 117, 0.8)">
 			        
     		        <br>Recipient<br>
     		        <input id="messageUsername" type="text" style="width: 40%"/>
@@ -403,7 +398,7 @@
 			        
 			        <br><br>
 			        <button class="submit" onclick="sendMessage()" 
-			                style="color: white; background: rgba(0, 0, 0, 0.6); width: 70%">
+			                style="color: white; background: rgba(0, 0, 0, 0.4); width: 70%">
 			            <h3>Send</h3>
 			        </button>
 			        <br><br>
@@ -415,6 +410,7 @@
 </div>
 
 <script src="navigation.js"></script>
+<script src="jquery-1.11.3.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
